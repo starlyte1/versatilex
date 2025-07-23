@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Premium Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        p.subtext {
+            text-align: center;
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #bbbbbb;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Our Premium Services</h1>
+        <p class="subtext">Unlock your business potential with our carefully crafted service offerings designed to elevate your success.</p>
+
+        <div class="services">
+            <div class="service-card">
+                <h2>Web Development</h2>
+                <p>We build high-performance, modern websites tailored to your brand to ensure seamless customer experiences across all devices.</p>
+            </div>
+
+            <div class="service-card">
+                <h2>UI/UX Design</h2>
+                <p>Our team crafts clean, engaging, and intuitive designs that drive conversions and keep your users coming back.</p>
+            </div>
+
+            <div class="service-card">
+                <h2>SEO Optimization</h2>
+                <p>Increase your online visibility and attract quality traffic with our premium SEO services backed by industry best practices.</p>
+            </div>
+
+            <div class="service-card">
+                <h2>Brand Strategy</h2>
+                <p>We help position your brand strategically in your market to build a consistent, trusted identity that resonates with your audience.</p>
+            </div>
+
+            <div class="service-card">
+                <h2>Content Creation</h2>
+                <p>From articles to videos, we deliver high-quality content designed to engage your audience and elevate your brand's presence.</p>
+            </div>
+
+            <div class="service-card">
+                <h2>Maintenance & Support</h2>
+                <p>Keep your website secure and up to date with our ongoing support and maintenance packages for continuous peace of mind.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
