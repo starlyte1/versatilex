@@ -87,13 +87,16 @@
     .info{flex:1;min-width:0}
     .name{font-weight:700;margin:0}
     .meta{margin-top:6px;color:var(--muted);font-size:13px}
-    .badges{display:flex;gap:8px;align-items:center;margin-top:10px}
+    .badges{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
     .badge{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03)}
     .active{background:linear-gradient(90deg,#10b98133,#3b82f633);color:#a7f3d033;border:0}
     .team{background:linear-gradient(90deg,#6366f133,#f9731633);border:0}
+    .score{background:linear-gradient(90deg,#f59e0b33,#ef444433);border:0;color:#fde68a}
+    .live{background:linear-gradient(90deg,#22c55e33,#16a34a33);border:0;color:#86efac}
 
-    .stats{display:flex;gap:10px;align-items:center}
+    .stats{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
     .stat{font-size:12px;color:var(--muted)}
+    .profile-link{font-size:12px;color:#3b82f6;text-decoration:none;margin-left:auto}
 
     /* avatar color variants */
     .avatar[data-color="1"]{background:linear-gradient(135deg,#7c3aed 0%, #06b6d4 100%);color:white}
@@ -144,7 +147,7 @@
       <article class="card">
         <div class="avatar" data-color="1">AL</div>
         <div class="info">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
             <div>
               <div class="name">Alicia Mwangi</div>
               <div class="meta">Team: <strong>ByteRunners</strong> • Role: Developer</div>
@@ -152,12 +155,15 @@
             <div class="stats">
               <div class="stat">#12</div>
               <div class="stat">Joined: Sep 10, 2025</div>
+              <div class="stat">Score: 92</div>
+              <a href="#" class="profile-link">Profile</a>
             </div>
           </div>
-
           <div class="badges">
             <div class="badge active">Active</div>
+            <div class="badge live">Live</div>
             <div class="badge team">Networking</div>
+            <div class="badge score">92 pts</div>
           </div>
         </div>
       </article>
@@ -165,7 +171,7 @@
       <article class="card">
         <div class="avatar" data-color="2">MJ</div>
         <div class="info">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
             <div>
               <div class="name">Mohamed Juma</div>
               <div class="meta">Team: <strong>CloudNinjas</strong> • Role: DevOps</div>
@@ -173,11 +179,15 @@
             <div class="stats">
               <div class="stat">#27</div>
               <div class="stat">Joined: Sep 09, 2025</div>
+              <div class="stat">Score: 85</div>
+              <a href="#" class="profile-link">Profile</a>
             </div>
           </div>
           <div class="badges">
             <div class="badge active">Active</div>
+            <div class="badge live">Live</div>
             <div class="badge team">Cloud Migration</div>
+            <div class="badge score">85 pts</div>
           </div>
         </div>
       </article>
@@ -185,7 +195,7 @@
       <article class="card">
         <div class="avatar" data-color="3">KP</div>
         <div class="info">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
             <div>
               <div class="name">Khadija Patel</div>
               <div class="meta">Solo • Role: ML Engineer</div>
@@ -193,11 +203,15 @@
             <div class="stats">
               <div class="stat">#03</div>
               <div class="stat">Joined: Sep 11, 2025</div>
+              <div class="stat">Score: 98</div>
+              <a href="#" class="profile-link">Profile</a>
             </div>
           </div>
           <div class="badges">
             <div class="badge active">Active</div>
+            <div class="badge live">Live</div>
             <div class="badge team">Machine Learning</div>
+            <div class="badge score">98 pts</div>
           </div>
         </div>
       </article>
@@ -205,7 +219,7 @@
       <article class="card">
         <div class="avatar" data-color="4">VS</div>
         <div class="info">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
             <div>
               <div class="name">Vers Solutions (Team)</div>
               <div class="meta">Team Lead: Samuel • Role: Full Stack</div>
@@ -213,21 +227,23 @@
             <div class="stats">
               <div class="stat">#01</div>
               <div class="stat">Joined: Sep 08, 2025</div>
+              <div class="stat">Score: 90</div>
+              <a href="#" class="profile-link">Profile</a>
             </div>
           </div>
           <div class="badges">
             <div class="badge active">Active</div>
+            <div class="badge live">Live</div>
             <div class="badge team">Security & Compliance</div>
+            <div class="badge score">90 pts</div>
           </div>
         </div>
       </article>
 
-      <!-- duplicate these cards as needed. This is static HTML (no JS) so maintainers can add/remove entries directly -->
-
       <article class="card">
         <div class="avatar" data-color="2">RL</div>
         <div class="info">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
             <div>
               <div class="name">Rita Langat</div>
               <div class="meta">Solo • Role: Android Developer</div>
@@ -235,11 +251,15 @@
             <div class="stats">
               <div class="stat">#18</div>
               <div class="stat">Joined: Sep 10, 2025</div>
+              <div class="stat">Score: 88</div>
+              <a href="#" class="profile-link">Profile</a>
             </div>
           </div>
           <div class="badges">
             <div class="badge active">Active</div>
+            <div class="badge live">Live</div>
             <div class="badge team">Android & iOS</div>
+            <div class="badge score">88 pts</div>
           </div>
         </div>
       </article>
