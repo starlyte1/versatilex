@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vers — Active Competitors</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#0f1724;
+      --muted:#98a0b3;
+      --accent-1:linear-gradient(135deg,#6ee7b7 0%, #3b82f6 100%);
+      --accent-2:linear-gradient(135deg,#fbcfe8 0%, #f97316 100%);
+      --glass: rgba(255,255,255,0.04);
+      --shadow: 0 8px 20px rgba(2,6,23,0.6);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 400px at 10% 10%, rgba(59,130,246,0.07), transparent),
+                  radial-gradient(900px 300px at 90% 80%, rgba(99,102,241,0.04), transparent),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 24px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      gap:24px;
+      min-height:100vh;
+    }
+
+    .container{
+      width:1100px;
+      max-width:100%;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background:var(--accent-1);
+      box-shadow:var(--shadow);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#04263b;font-size:18px;
+    }
+    header h1{margin:0;font-size:20px;letter-spacing:0.2px}
+    header p{margin:0;color:var(--muted);font-size:13px}
+
+    .controls{
+      display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap
+    }
+    .search{
+      appearance:none;border:0;padding:10px 14px;border-radius:10px;background:var(--glass);color:inherit;min-width:260px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+    .filters{
+      display:flex;gap:8px;align-items:center
+    }
+    .btn{
+      padding:9px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);cursor:pointer;color:inherit;font-size:14px
+    }
+    .btn.primary{
+      background:var(--accent-1);color:#03203a;border:0;box-shadow:0 8px 18px rgba(59,130,246,0.12)
+    }
+
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;padding-bottom:24px
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow);
+      display:flex;gap:12px;align-items:center;transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.7)}
+
+    .avatar{
+      width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px
+    }
+    .info{flex:1;min-width:0}
+    .name{font-weight:700;margin:0}
+    .meta{margin-top:6px;color:var(--muted);font-size:13px}
+    .badges{display:flex;gap:8px;align-items:center;margin-top:10px}
+    .badge{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03)}
+    .active{background:linear-gradient(90deg,#10b98133,#3b82f633);color:#a7f3d033;border:0}
+    .team{background:linear-gradient(90deg,#6366f133,#f9731633);border:0}
+
+    .stats{display:flex;gap:10px;align-items:center}
+    .stat{font-size:12px;color:var(--muted)}
+
+    /* avatar color variants */
+    .avatar[data-color="1"]{background:linear-gradient(135deg,#7c3aed 0%, #06b6d4 100%);color:white}
+    .avatar[data-color="2"]{background:linear-gradient(135deg,#ef4444 0%, #f59e0b 100%);color:white}
+    .avatar[data-color="3"]{background:linear-gradient(135deg,#06b6d4 0%, #3b82f6 100%);color:white}
+    .avatar[data-color="4"]{background:linear-gradient(135deg,#10b981 0%, #60a5fa 100%);color:white}
+
+    /* empty state */
+    .empty{
+      text-align:center;padding:60px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px dashed rgba(255,255,255,0.03);
+      color:var(--muted)
+    }
+
+    /* responsive tweaks */
+    @media (max-width:640px){
+      header{gap:10px}
+      .logo{width:48px;height:48px}
+    }
+
+    /* printable friendly */
+    @media print{body{background:white;color:black} .card{border:1px solid #ddd;box-shadow:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">V</div>
+      <div>
+        <h1>Vers — IT Competition</h1>
+        <p>Active competitors — live roster maintained by the event organisers</p>
+      </div>
+    </header>
+
+    <div class="controls">
+      <input class="search" placeholder="Search competitor name, team or tech (HTML, ML, Networking...)" aria-label="search competitors">
+
+      <div class="filters">
+        <button class="btn">All</button>
+        <button class="btn">Individuals</button>
+        <button class="btn">Teams</button>
+        <button class="btn primary">Active only</button>
+      </div>
+    </div>
+
+    <!-- grid of competitor cards -->
+    <section class="grid" id="roster">
+
+      <article class="card">
+        <div class="avatar" data-color="1">AL</div>
+        <div class="info">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div>
+              <div class="name">Alicia Mwangi</div>
+              <div class="meta">Team: <strong>ByteRunners</strong> • Role: Developer</div>
+            </div>
+            <div class="stats">
+              <div class="stat">#12</div>
+              <div class="stat">Joined: Sep 10, 2025</div>
+            </div>
+          </div>
+
+          <div class="badges">
+            <div class="badge active">Active</div>
+            <div class="badge team">Networking</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="avatar" data-color="2">MJ</div>
+        <div class="info">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div>
+              <div class="name">Mohamed Juma</div>
+              <div class="meta">Team: <strong>CloudNinjas</strong> • Role: DevOps</div>
+            </div>
+            <div class="stats">
+              <div class="stat">#27</div>
+              <div class="stat">Joined: Sep 09, 2025</div>
+            </div>
+          </div>
+          <div class="badges">
+            <div class="badge active">Active</div>
+            <div class="badge team">Cloud Migration</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="avatar" data-color="3">KP</div>
+        <div class="info">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div>
+              <div class="name">Khadija Patel</div>
+              <div class="meta">Solo • Role: ML Engineer</div>
+            </div>
+            <div class="stats">
+              <div class="stat">#03</div>
+              <div class="stat">Joined: Sep 11, 2025</div>
+            </div>
+          </div>
+          <div class="badges">
+            <div class="badge active">Active</div>
+            <div class="badge team">Machine Learning</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="avatar" data-color="4">VS</div>
+        <div class="info">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div>
+              <div class="name">Vers Solutions (Team)</div>
+              <div class="meta">Team Lead: Samuel • Role: Full Stack</div>
+            </div>
+            <div class="stats">
+              <div class="stat">#01</div>
+              <div class="stat">Joined: Sep 08, 2025</div>
+            </div>
+          </div>
+          <div class="badges">
+            <div class="badge active">Active</div>
+            <div class="badge team">Security & Compliance</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- duplicate these cards as needed. This is static HTML (no JS) so maintainers can add/remove entries directly -->
+
+      <article class="card">
+        <div class="avatar" data-color="2">RL</div>
+        <div class="info">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <div>
+              <div class="name">Rita Langat</div>
+              <div class="meta">Solo • Role: Android Developer</div>
+            </div>
+            <div class="stats">
+              <div class="stat">#18</div>
+              <div class="stat">Joined: Sep 10, 2025</div>
+            </div>
+          </div>
+          <div class="badges">
+            <div class="badge active">Active</div>
+            <div class="badge team">Android & iOS</div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- empty-state example if there are no competitors (uncomment to use) -->
+    <!-- <div class="empty">No active competitors right now. Check back soon or contact the event organisers to add participants.</div> -->
+
+    <p style="color:var(--muted);font-size:13px;margin-top:6px">Tip: This is a static HTML/CSS page. To update the roster, edit the <code>&lt;section id=\"roster\"&gt;</code> area and add/remove <code>&lt;article class=\"card\"&gt;</code> entries.</p>
+
+  </div>
+</body>
+</html>
